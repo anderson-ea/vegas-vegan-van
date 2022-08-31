@@ -130,6 +130,7 @@ nav > img {
   position: absolute;
   margin-top: 56px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .title > h1 {
@@ -144,11 +145,12 @@ nav > img {
   justify-content: flex-end;
   align-items: flex-end;
   margin-right: 10px;
+  min-width: 200px;
 }
 
 .breakfast-lunch > button {
   border: none;
-  padding: 5px;
+  padding: 0 10 5 0;
   background-color: rgb(223, 113, 113);
   color: white;
   z-index: 10;
