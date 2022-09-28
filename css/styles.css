@@ -4,6 +4,15 @@
   font-family: 'Inter', sans-serif;
 }
 
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
 nav {
   height: 90px;
   width: 100%;
@@ -139,7 +148,7 @@ nav > img {
   font-family: 'Rubik Dirt', cursive;
 }
 
-.breakfast-lunch {
+/* .breakfast-lunch {
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -160,4 +169,44 @@ nav > img {
   cursor: pointer;
   color: rgb(0, 160, 0);
   transition: .5s ease;
+} */
+
+.x1 {
+  flex: 1;
+  max-width: 500px;
+  min-width: 400px;
+}
+
+.container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 20px;
+}
+
+.container2 {
+  background-color: purple;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.statement2 {
+  color: white;
+}
+
+.img-spacing {
+  margin-top: 100px;
+}
+
+.future {
+  font-size: 2em;
+  background: -webkit-linear-gradient(rgb(223, 113, 113), rgb(0, 255, 0));
+  background-clip: rgb(223, 113, 113);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statement {
+  color: rgb(0, 100, 0);
 }
