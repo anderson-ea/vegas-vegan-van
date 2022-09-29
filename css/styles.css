@@ -4,6 +4,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -108,11 +112,20 @@ nav > img {
   padding: 20px;
 }
 
+.flex.container {
+  background-image: linear-gradient(to top, #fd73fbd5, #7aff52d5), 
+    url(/images/burger-img.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  color: #FFFFFF;
+}
+
 .container {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin: 20px;
+  padding: 20px;
 }
 
 .container2 {
@@ -133,14 +146,14 @@ nav > img {
 
 .future {
   font-size: 2em;
-  background: -webkit-linear-gradient(rgb(223, 113, 113), rgb(0, 255, 0));
+  background: -webkit-linear-gradient(rgb(223, 113, 113), rgb(54, 179, 20));
   background-clip: rgb(223, 113, 113);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .statement {
-  color: rgb(0, 100, 0);
+  color: rgb(16, 110, 0);
 }
 
 footer {
