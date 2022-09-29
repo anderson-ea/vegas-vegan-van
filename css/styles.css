@@ -48,7 +48,7 @@ nav > img {
 }
 
 .nav-link:hover {
-  color: rgb(0, 160, 0);
+  color: rgb(0, 194, 0);
 }
 
 .hamburger {
@@ -90,44 +90,16 @@ nav > img {
   height: 160px;
   width: 100%;
   overflow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
-  width: 100%;
-  position: absolute;
-  margin-top: 56px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.title > h1 {
   color: white;
-  font-size: 34;
+  font-size: 40;
   font-family: 'Rubik Dirt', cursive;
 }
-
-/* .breakfast-lunch {
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-right: 10px;
-  min-width: 200px;
-}
-
-.breakfast-lunch > button {
-  border: none;
-  padding: 0 10 5 0;
-  background-color: rgb(223, 113, 113);
-  color: white;
-  z-index: 10;
-}
-
-.break-but:hover, .lunch-but:hover {
-  cursor: pointer;
-  color: rgb(0, 160, 0);
-  transition: .5s ease;
-} */
 
 .x1 {
   flex: 1;
@@ -248,5 +220,10 @@ footer {
 
   .locations {
     flex-direction: column;
+  }
+
+  .title {
+    width: 200px;
+    text-align: center;
   }
 }
