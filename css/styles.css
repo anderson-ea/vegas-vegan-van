@@ -18,6 +18,10 @@ body {
   display: flex;
 }
 
+.column {
+  flex-direction: column;
+}
+
 nav {
   height: 90px;
   width: 100%;
@@ -168,6 +172,29 @@ nav > img {
 
 .statement {
   color: rgb(16, 110, 0);
+  margin-right: 20px;
+}
+
+.c1 {
+  border: solid black 2px;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.foods {
+  width: 850px;
+  height: 120px;
+  flex-wrap: wrap;
+  border: solid red 2px;
+}
+
+.food {
+  width: 400px;
+}
+
+.food-container {
+  border: solid green 2px;
 }
 
 footer {
