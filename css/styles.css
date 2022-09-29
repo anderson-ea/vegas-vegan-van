@@ -135,6 +135,20 @@ nav > img {
   gap: 2rem;
 }
 
+.container3 {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.headshots {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 20px;
+}
+
 .statement2 {
   color: white;
   text-align: center;
