@@ -5,8 +5,13 @@
 }
 
 html {
-  overflow: hidden;
-  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .flex {
@@ -47,7 +52,7 @@ nav > img {
 }
 
 .nav-link:hover {
-  color: rgb(0, 160, 0);
+  color: rgb(0, 194, 0);
 }
 
 .hamburger {
@@ -63,6 +68,119 @@ nav > img {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: black;
+}
+
+.shop-div {
+  height: 30px;
+  margin-right: 20px;
+  justify-content: flex-end;
+  z-index: 10;
+}
+
+.shop-div > button {
+  padding: 5 10 5 10;
+  border: none;
+  border-radius: 9999rem;
+}
+
+.shop-div > button:hover {
+  cursor: pointer;
+  background-color: rgb(0, 100, 0);
+  color: white;
+}
+
+.title-container {
+  background-color: rgb(223, 113, 113);
+  height: 160px;
+  width: 100%;
+  overflow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 40;
+  font-family: 'Rubik Dirt', cursive;
+}
+
+.x1 {
+  flex: 1;
+  max-width: 500px;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.flex.container {
+  background-image: linear-gradient(to top, #fd73fbd5, #7aff52d5), 
+    url(/images/burger-img.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  color: #FFFFFF;
+}
+
+.container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.container2 {
+  background-color: green;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.statement2 {
+  color: white;
+  text-align: center;
+}
+
+.img-spacing {
+  margin-top: 100px;
+}
+
+.future {
+  font-size: 2em;
+  background: -webkit-linear-gradient(rgb(223, 113, 113), rgb(54, 179, 20));
+  background-clip: rgb(223, 113, 113);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statement {
+  color: rgb(16, 110, 0);
+}
+
+footer {
+  margin-top: auto;
+}
+
+.footer {
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background: white;
+}
+
+.socials {
+  padding: 20px;
+}
+
+.locations {
+  justify-content: space-around;
+}
+
+.location {
+  color: rgb(223, 113, 113);
+  text-align: center;
+  margin: 20px;
 }
 
 @media (max-width: 768px) {
@@ -107,106 +225,18 @@ nav > img {
     background-color: rgb(223, 113, 113);
     z-index: 10;
   }
-}
 
-.shop-div {
-  height: 30px;
-  margin-right: 20px;
-  justify-content: flex-end;
-  z-index: 10;
-}
+  .footer {
+    justify-content: center;
+    flex-direction: column;
+  }
 
-.shop-div > button {
-  padding: 5 10 5 10;
-  border: none;
-  border-radius: 9999rem;
-}
+  .locations {
+    flex-direction: column;
+  }
 
-.shop-div > button:hover {
-  cursor: pointer;
-  background-color: rgb(0, 100, 0);
-  color: white;
-}
-
-.title-container {
-  background-color: rgb(223, 113, 113);
-  height: 160px;
-  width: 100%;
-}
-
-.title {
-  width: 100%;
-  position: absolute;
-  margin-top: 56px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.title > h1 {
-  color: white;
-  font-size: 40;
-  font-family: 'Rubik Dirt', cursive;
-}
-
-/* .breakfast-lunch {
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-right: 10px;
-  min-width: 200px;
-}
-
-.breakfast-lunch > button {
-  border: none;
-  padding: 0 10 5 0;
-  background-color: rgb(223, 113, 113);
-  color: white;
-  z-index: 10;
-}
-
-.break-but:hover, .lunch-but:hover {
-  cursor: pointer;
-  color: rgb(0, 160, 0);
-  transition: .5s ease;
-} */
-
-.x1 {
-  flex: 1;
-  max-width: 500px;
-  min-width: 400px;
-}
-
-.container {
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 20px;
-}
-
-.container2 {
-  background-color: purple;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.statement2 {
-  color: white;
-}
-
-.img-spacing {
-  margin-top: 100px;
-}
-
-.future {
-  font-size: 2em;
-  background: -webkit-linear-gradient(rgb(223, 113, 113), rgb(0, 255, 0));
-  background-clip: rgb(223, 113, 113);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.statement {
-  color: rgb(0, 100, 0);
+  .title {
+    width: 200px;
+    text-align: center;
+  }
 }
