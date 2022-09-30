@@ -176,25 +176,48 @@ nav > img {
 }
 
 .c1 {
-  border: solid black 2px;
   flex: 1;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+}
+
+.c1 > h3 {
+  justify-content: flex-start;
+  padding: 20px;
 }
 
 .foods {
-  width: 850px;
-  height: 120px;
+  flex: 1;
   flex-wrap: wrap;
-  border: solid red 2px;
+  max-width: 860px;
 }
 
 .food {
-  width: 400px;
+  max-width: 300px;
+  color: purple;
+}
+
+.foods-border {
+  border: solid gray 1px;
+  border-radius: 5px;
+  margin: 5px 10px;
+  min-width: 400px;
+  max-width: 500px;
+  justify-content: space-between;
 }
 
 .food-container {
-  border: solid green 2px;
+  min-width: 100px;
+  max-width: 300px;
+  padding: 20px;
+}
+
+.food-name {
+  color: purple;
+}
+
+.price {
+  margin-top: 20px;
 }
 
 footer {
@@ -279,5 +302,11 @@ footer {
   .title {
     width: 200px;
     text-align: center;
+  }
+}
+
+@media (max-width: 870px) {
+  .foods {
+    justify-content: center;
   }
 }
