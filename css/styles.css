@@ -18,6 +18,10 @@ body {
   display: flex;
 }
 
+.column {
+  flex-direction: column;
+}
+
 nav {
   height: 90px;
   width: 100%;
@@ -168,6 +172,54 @@ nav > img {
 
 .statement {
   color: rgb(16, 110, 0);
+  margin-right: 20px;
+}
+
+.c1 {
+  flex: 1;
+  align-items: center;
+}
+
+.c1 > h3 {
+  padding: 20px;
+}
+
+.foods {
+  flex: 1;
+  flex-wrap: wrap;
+  max-width: 860px;
+}
+
+.food {
+  max-width: 300px;
+  color: purple;
+}
+
+.foods-border {
+  border: solid gray 1px;
+  border-radius: 5px;
+  margin: 5px 10px;
+  min-width: 400px;
+  max-width: 500px;
+  justify-content: space-between;
+}
+
+.food-container {
+  min-width: 100px;
+  max-width: 300px;
+  padding: 20px;
+}
+
+.food-title {
+  color: green;
+}
+
+.food-name {
+  color: purple;
+}
+
+.price {
+  margin-top: 20px;
 }
 
 footer {
@@ -252,5 +304,11 @@ footer {
   .title {
     width: 200px;
     text-align: center;
+  }
+}
+
+@media (max-width: 870px) {
+  .foods {
+    justify-content: center;
   }
 }
