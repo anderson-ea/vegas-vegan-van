@@ -311,5 +311,6 @@ footer {
 @media (max-width: 870px) {
   .foods {
     justify-content: center;
-  }
+  } 
+  
 }
