@@ -192,8 +192,12 @@ nav > img {
 }
 
 .food {
-  max-width: 300px;
+  max-width: 220px;
   color: purple;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .foods-border {
@@ -203,6 +207,11 @@ nav > img {
   min-width: 400px;
   max-width: 500px;
   justify-content: space-between;
+}
+
+.foods-border:hover {
+  cursor: pointer;
+  background-color: rgb(241, 255, 240);
 }
 
 .food-container {
