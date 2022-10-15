@@ -13,6 +13,11 @@ document.querySelectorAll(".nav-link").forEach(n => n.
     navMenu.classList.remove("active");
   }))
 
+//from stack overflow.. function to show visibility. learning JS...
+function klikaj(i) {
+  document.getElementById(i).style.visibility='visible';
+}
+
 // store each menu item in JSON and pull cost from there
 // use javascript to display cost of menu item
 // js to click on button and retreive price
