@@ -198,6 +198,7 @@ nav > img {
   display: inline-block;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size: 14px;
 }
 
 .foods-border {
