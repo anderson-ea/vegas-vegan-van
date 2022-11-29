@@ -20,23 +20,24 @@ function showModal(i) {
 async function grabData() {
   const res = await fetch('/menu.json');
   const menu = await res.json();
+  const menuItem = document.createElement('template');
+  menuItem.innerHTML = `
+    <div class="flex foods-border">
+      <div class="flex column food-container">
+        <h4 class="food-name">${menu.menuItems.BURGERS[0].name}</h4>
+        <p class="flex food"></br>${menu.menuItems.BURGERS[0].ingredients}</p>
+        <p class="price">${menu.menuItems.BURGERS[0].price}</p>
+      </div>
+      <img src="${menu.menuItems.BURGERS[0].img}" alt="${menu.menuItems.BURGERS[0].name}" style="padding: 20px;width: 100px; height: 100px">
+    </div>  
+  `;
+
+  document.getElementById('menuItems').appendChild(menuItem.content);
 }
 
 grabData();
 
-const menuItem = document.createElement('template');
-menuItem.innerHTML = `
-  <div class="flex foods-border">
-    <div class="flex column food-container">
-      <h4 class="food-name">VVV Burger</h4>
-      <p class="flex food"></br>hawaiian bbq sauce, hash brown, white onion, sliced cheese, grilled pineapple</p>
-      <p class="price">$12.99</p>
-    </div>
-    <img src="images/b1.jpg" alt="vvv burger" style="padding: 20px;width: 100px; height: 100px">
-  </div>  
-`;
 
-document.getElementById('menuItems').appendChild(menuItem.content);
 
 
 

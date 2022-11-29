@@ -1,73 +1,97 @@
-{
-  "BURGERS": [{
-    "VVV Burger": {
+{ 
+  "menuItems" : {
+    "BURGERS" : [{
+      "id" : "0101",
+      "name" : "VVV Burger",
       "ingredients" : "hawaiian bbq sauce, hash brown, white onion, sliced cheese, grilled pineapple",
       "price" : "$12.99",
       "img" : "/images/b1.jpg"
     },
-    "Monster Burger": {
+    {
+      "id" : "0102",
+      "name" : "Monster Burger",
       "ingredients" : "bbq sauce, house ranch, sliced cheese, grilled onions, pickles, lettuce, tomato, meta patty (gfo)",
       "price" : "$12.00",
       "img" : "/images/b2.jpg"
     },
-    "Good Burger": {
+    {
+      "id" : "0103",
+      "name" : "Good Burger",
       "ingredients" : "Vegan sauce, cheese, pickle, lettuce, tomato (gfo)",
       "price" : "$11.00",
       "img" : "/images/b3.jpg"
     },
-    "Veggie Burger": {
+    {
+      "id" : "0104",
+      "name" : "WOW Burger",
       "ingredients" : "Flatiron steak sauce, shaved brussels sprouts, shallots, grilled mushrooms, gouda cheese (gfo)",
       "price" : "$12.33",
       "img" : "/images/b4.jpg"
     },
-    "Okay Burger": {
+    {
+      "id" : "0105",
+      "name" : "Okay Burger",
       "ingredients" : "Grilled mushrooms, grilled onions, gouda cheese, giardiniera, tuscan sauce, lettuce (gfo)",
       "price" : "$11.11",
       "img" : "/images/b5.jpg"
     }
-  }],
-  "SANDWICHES": [{
-    "Buffalo Sammy": {
+  ],
+    "SAMMIES" : [{
+      "id" : "0201",
+      "name" : "Buffalo Sammy",
       "ingredients" : "Crispy buffalo chicken, lettuce, tomato, pickles, ranch",
       "price" : "$11.50",
       "img" : "/images/s1.jpg"
     },
-    "Mean Sammy": {
+    {
+      "id" : "0202",
+      "name" : "Mean Sammy",
       "ingredients" : "Grilled pineapple, house pickled red onions, lettuce, mayo, crispy hawaiian bbq-tossed chicken",
       "price" : "$12.49",
       "img" : "/images/s2.jpg"
     },
-    "Awesome Sandwich": {
+    {
+      "id" : "0203",
+      "name" : "Awesome Sammy",
       "ingredients" : "Sriracha maple aioli, hash brown, crispy chicken, american cheese, grilled onions",
       "price" : "$11.30",
       "img" : "/images/s3.jpg"
     },
-    "Excellent Sandwich": {
+    {
+      "id" : "0204",
+      "name" : "Proper Sandwich",
       "ingredients" : "mayo, grilled onions, lettuce, tomato, crispy sweet chipotle-tossed chicken",
       "price" : "$12.00",
       "img" : "/images/s4.jpg"
     }
-  }],
-  "SIDES": [{
-    "Fries": {
+  ],
+    "SIDES" : [{
+      "id" : "0301",
+      "name" : "Fries",
       "ingredients" : "fresh cut fried potatoes",
       "price" : "$6.00",
       "img" : "/images/sd1.jpg"
     },
-    "Sweet Potato Fries": {
+    {
+      "id" : "0302",
+      "name" : "Sweet Potato Fries",
       "ingredients" : "fries, but more orange",
       "price" : "$6.19",
       "img" : "images/sd2.jpg"
     },
-    "Side Salad": {
+    {
+      "id" : "0303",
+      "name" : "Side Salad",
       "ingredients" : "caesar salad with lettuce and croutons",
       "price" : "$7.00",
       "img" : "/images/sd3.jpg"
     },
-    "Mac n Cheese": {
+    {
+      "id" : "0304",
+      "name" : "Mac n Cheeze",
       "ingredients" : "cashew cheese covered mac",
       "price" : "$5.00",
       "img" : "/images/sd4.jpg"
-    }
-  }]
+    }]
+  }
 }
