@@ -21,18 +21,20 @@ async function grabData() {
   const res = await fetch('/menu.json');
   const menu = await res.json();
   const menuItem = document.createElement('template');
-  menuItem.innerHTML = `
-    <div class="flex foods-border">
-      <div class="flex column food-container">
-        <h4 class="food-name">${menu.menuItems.BURGERS[0].name}</h4>
-        <p class="flex food"></br>${menu.menuItems.BURGERS[0].ingredients}</p>
-        <p class="price">${menu.menuItems.BURGERS[0].price}</p>
-      </div>
-      <img src="${menu.menuItems.BURGERS[0].img}" alt="${menu.menuItems.BURGERS[0].name}" style="padding: 20px;width: 100px; height: 100px">
-    </div>  
-  `;
-
-  document.getElementById('menuItems').appendChild(menuItem.content);
+  for (let i = 0; i < 5; i++) {
+    menuItem.innerHTML = `
+      <div class="flex foods-border">
+        <div class="flex column food-container">
+          <h4 class="food-name">${menu.menuItems.BURGERS[i].name}</h4>
+          <p class="flex food"></br>${menu.menuItems.BURGERS[i].ingredients}</p>
+          <p class="price">${menu.menuItems.BURGERS[i].price}</p>
+        </div>
+        <img src="${menu.menuItems.BURGERS[i].img}" alt="${menu.menuItems.BURGERS[i].name}" style="padding: 20px;width: 100px; height: 100px">
+      </div>  
+    `;
+  
+    document.getElementById('menuItems').appendChild(menuItem.content);
+  }
 }
 
 grabData();
