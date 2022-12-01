@@ -39,10 +39,10 @@ async function grabData() {
         <div class="flex foods-border">
           <div class="flex column food-container">
             <h4 class="food-name">${menu.menuItems[type][i].name}</h4>
-            <p class="flex food"></br>${type[i].ingredients}</p>
-            <p class="price">${type[i].price}</p>
+            <p class="flex food"></br>${menu.menuItems[type][i].ingredients}</p>
+            <p class="price">${menu.menuItems[type][i].price}</p>
           </div>
-          <img src="${type[i].img}" alt="${type[i].name}" style="padding: 20px;width: 100px; height: 100px">
+          <img src="${menu.menuItems[type][i].img}" alt="${menu.menuItems[type][i].name}" style="padding: 20px;width: 100px; height: 100px">
         </div>  
       `;
     
