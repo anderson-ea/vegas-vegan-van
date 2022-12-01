@@ -21,19 +21,33 @@ async function grabData() {
   const res = await fetch('/menu.json');
   const menu = await res.json();
   const menuItem = document.createElement('template');
-  for (let i = 0; i < 5; i++) {
-    menuItem.innerHTML = `
-      <div class="flex foods-border">
-        <div class="flex column food-container">
-          <h4 class="food-name">${menu.menuItems.BURGERS[i].name}</h4>
-          <p class="flex food"></br>${menu.menuItems.BURGERS[i].ingredients}</p>
-          <p class="price">${menu.menuItems.BURGERS[i].price}</p>
-        </div>
-        <img src="${menu.menuItems.BURGERS[i].img}" alt="${menu.menuItems.BURGERS[i].name}" style="padding: 20px;width: 100px; height: 100px">
-      </div>  
+  const wholeMenu = document.createElement('template');
+
+  for (let n = 0; n < 3; n++) {
+    let type = Object.keys(menu.menuItems)[n];
+    wholeMenu.innerHTML = `
+      <div class="flex column c1">
+        <h3 class="food-title">${type}</h3>
+        <div id="menuItems${n}" class="flex foods"></div>
+      </div>
     `;
-  
-    document.getElementById('menuItems').appendChild(menuItem.content);
+
+    document.getElementById('actualMenu').appendChild(wholeMenu.content);
+
+    for (let i = 0; i < 4; i++) {
+      menuItem.innerHTML = `
+        <div class="flex foods-border">
+          <div class="flex column food-container">
+            <h4 class="food-name">${menu.menuItems[type][i].name}</h4>
+            <p class="flex food"></br>${type[i].ingredients}</p>
+            <p class="price">${type[i].price}</p>
+          </div>
+          <img src="${type[i].img}" alt="${type[i].name}" style="padding: 20px;width: 100px; height: 100px">
+        </div>  
+      `;
+    
+      document.getElementById(`menuItems${n}`).appendChild(menuItem.content);
+    }
   }
 }
 
