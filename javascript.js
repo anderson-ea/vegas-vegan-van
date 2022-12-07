@@ -36,7 +36,7 @@ async function grabData() {
 
     for (let i = 0; i < 4; i++) {
       menuItem.innerHTML = `
-        <div class="flex foods-border">
+        <div class="flex foods-border" onclick="showModal()">
           <div class="flex column food-container">
             <h4 class="food-name">${menu.menuItems[type][i].name}</h4>
             <p class="flex food"></br>${menu.menuItems[type][i].ingredients}</p>
