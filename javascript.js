@@ -9,8 +9,8 @@ hamburger.addEventListener("click", () => {
 
 document.querySelectorAll(".nav-link").forEach(n => n.
   addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
   }))
 
 // store each menu item in JSON and pull cost from there
