@@ -13,7 +13,24 @@ document.querySelectorAll(".nav-link").forEach(n => n.
     navMenu.classList.toggle("active");
   }))
 
-// store each menu item in JSON and pull cost from there
-// use javascript to display cost of menu item
-// js to click on button and retreive price
-// cost will be simple loop through a list of all costs added to list
+
+fetch('menu.JSON')
+  .then(response => response.json())
+  .then(data => {
+    var container = document.getElementById('inject-menu1');
+    container.innerHTML = `
+      <h3 class="food-title">BURGERS</h3>
+      <div class="flex foods">
+        <div class="flex foods-border">
+          <div class="flex column food-container">
+            <h4 class="food-name">${data.burgers[0].name}</h4>
+            <p class="flex food"></br>${data.burgers[0].ingredients}</p>
+            <p class="price">$${data.burgers[0].price}</p>
+          </div>
+        <img src="${data.burgers[0].img}" alt="vvv burger" style="padding: 20px;width: 100px; height: 100px">
+      </div>
+    `;  
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
