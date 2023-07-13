@@ -17,20 +17,36 @@ document.querySelectorAll(".nav-link").forEach(n => n.
 fetch('menu.JSON')
   .then(response => response.json())
   .then(data => {
-    var container = document.getElementById('inject-menu1');
-    container.innerHTML = `
-      <h3 class="food-title">BURGERS</h3>
-      <div class="flex foods">
-        <div class="flex foods-border">
-          <div class="flex column food-container">
-            <h4 class="food-name">${data.burgers[0].name}</h4>
-            <p class="flex food"></br>${data.burgers[0].ingredients}</p>
-            <p class="price">$${data.burgers[0].price}</p>
+    const generateMenuItems = (items, containerId) => {
+      var container = document.getElementById(containerId);    
+      items.forEach(item => {
+        var listItem = document.createElement("div");
+        listItem.innerHTML = `
+          <div class="flex foods-border">
+            <div class="flex column food-container">
+              <h4 class="food-name">${item.name}</h4>
+              <p class="flex food"></br>${item.ingredients}</p>
+              <p class="price">$${item.price.toFixed(2)}</p>
+            </div>
+            <img src="${item.img}" alt="${item.name}" style="padding: 20px;width: 100px; height: 100px">
           </div>
-        <img src="${data.burgers[0].img}" alt="vvv burger" style="padding: 20px;width: 100px; height: 100px">
-      </div>
-    `;  
-  })
+        `;
+        container.appendChild(listItem);
+      });
+    }
+
+    // Generate burgers section
+    generateMenuItems(data.burgers, "burgers");
+
+    // Generate sandwiches section
+    generateMenuItems(data.sandwiches, "sandwiches");
+
+    // Generate sides section
+    generateMenuItems(data.sides, "sides");
+    
+  })  
   .catch(error => {
     console.error('Error:', error);
   });
+
+  
