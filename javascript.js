@@ -2,6 +2,8 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const shoppingCartValue = document.querySelector("shop-cart");
 
+
+//nav bar hamburger to X logic
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
@@ -13,7 +15,7 @@ document.querySelectorAll(".nav-link").forEach(n => n.
     navMenu.classList.toggle("active");
   }))
 
-
+//generates menu items with corresponding data
 fetch('menu.JSON')
   .then(response => response.json())
   .then(data => {
@@ -44,6 +46,7 @@ fetch('menu.JSON')
     // Generate sides section
     generateMenuItems(data.sides, "sides");
 
+    // Activates Modal when clicking on menu item
     const modal = document.querySelector(".menu-modal")
 
     document.querySelectorAll(".foods-border").forEach(n => 
