@@ -1,6 +1,6 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-const shoppingCartValue = document.querySelector("shop-cart")
+const shoppingCartValue = document.querySelector("shop-cart");
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
@@ -43,10 +43,16 @@ fetch('menu.JSON')
 
     // Generate sides section
     generateMenuItems(data.sides, "sides");
+
+    const modal = document.querySelector(".menu-modal")
+
+    document.querySelectorAll(".foods-border").forEach(n => 
+      n.addEventListener("click", (e) => {
+        console.log("hello")
+        modal.classList.toggle('active');
+      }))
     
   })  
   .catch(error => {
     console.error('Error:', error);
   });
-
-  

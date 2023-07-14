@@ -259,7 +259,11 @@ footer {
   margin: 20px;
 }
 
-#menu-modal {
+.menu-modal {
+  display: none;
+}
+
+.menu-modal.active {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -267,16 +271,14 @@ footer {
   height: 100vh;
   width: 100vw;
   z-index: 10;
-  background-color: black;
-  opacity: 0.6;
+  background-color: rgba(0,0,0,.6);
 }
 
-#modal-container {
+.modal-container {
   position: absolute;
-  z-index: 11;
-  background-color: white;
-  height: 200px;
-  width: 200px;
+  background-color:rgb(255, 255, 255);
+  width: 500px;
+  height: 500px; 
 }
 
 @media (max-width: 768px) {
