@@ -56,3 +56,8 @@ fetch('menu.JSON')
   .catch(error => {
     console.error('Error:', error);
   });
+
+const modal = document.querySelector('.menu-modal')
+modal.addEventListener("click", () => {
+  modal.classList.toggle('active');
+})
