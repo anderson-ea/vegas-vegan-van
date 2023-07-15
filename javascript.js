@@ -58,7 +58,7 @@ fetch('menu.JSON')
         const foodName = parent.querySelector('.food-name').innerText
         const foodPrice = parent.querySelector('.price').innerText
         const foodIng = parent.querySelector('.food').innerText
-        const foodImg = parent.querySelector('img[src]').
+        const foodImg = parent.querySelector('img').getAttribute('src')
         innerModal.innerHTML = `
           <div class="flex">
             <div class="flex column">
