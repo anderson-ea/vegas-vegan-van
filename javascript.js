@@ -19,12 +19,12 @@ document.querySelectorAll(".nav-link").forEach(n => n.
 fetch('menu.JSON')
   .then(response => response.json())
   .then(data => {
-    const generateMenuItems = (items, containerId) => {
+    const generateMenuItems = (items, containerId, id) => {
       var container = document.getElementById(containerId);    
       items.forEach(item => {
         var listItem = document.createElement("div");
         listItem.innerHTML = `
-          <div class="flex foods-border">
+          <div id="${containerId + id}" class="flex foods-border">
             <div class="flex column food-container">
               <h4 class="food-name">${item.name}</h4>
               <p class="flex food"></br>${item.ingredients}</p>
@@ -34,25 +34,41 @@ fetch('menu.JSON')
           </div>
         `;
         container.appendChild(listItem);
+        id += 1
       });
     }
 
     // Generate burgers section
-    generateMenuItems(data.burgers, "burgers");
+    generateMenuItems(data.burgers, "burgers", 1);
 
     // Generate sandwiches section
-    generateMenuItems(data.sandwiches, "sandwiches");
+    generateMenuItems(data.sandwiches, "sandwiches", 1);
 
     // Generate sides section
-    generateMenuItems(data.sides, "sides");
+    generateMenuItems(data.sides, "sides", 1);
 
     // Activates Modal when clicking on menu item
     const modal = document.querySelector(".menu-modal")
-
+    const innerModal = document.querySelector(".modal-container")
+    // const food 
     document.querySelectorAll(".foods-border").forEach(n => 
       n.addEventListener("click", (e) => {
-        console.log("hello")
-        modal.classList.toggle('active');
+        modal.classList.toggle('active')
+        const parent = document.getElementById(e.currentTarget.id)
+        const foodName = parent.querySelector('.food-name').innerText
+        const foodPrice = parent.querySelector('.price').innerText
+        const foodIng = parent.querySelector('.food').innerText
+        const foodImg = parent.querySelector('img[src]').
+        innerModal.innerHTML = `
+          <div class="flex">
+            <div class="flex column">
+              <h4 class="">${foodName}</h4>
+              <p class="flex"></br>${foodIng}</p>
+              <p class="">${foodPrice}</p>
+            </div>
+            <img src="${foodImg}" alt="${foodName}" style="padding: 20px;width: 200px; height: 200px">
+          </div>
+        `;
       }))
     
   })  

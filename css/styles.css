@@ -193,7 +193,7 @@ nav > img {
 
 .food {
   max-width: 220px;
-  color: purple;
+  color: rgb(223, 113, 113);
   overflow: hidden;
   display: inline-block;
   white-space: nowrap;
@@ -220,12 +220,8 @@ nav > img {
   padding: 20px;
 }
 
-.food-title {
-  color: green;
-}
-
-.food-name {
-  color: purple;
+.food-title, .food-name {
+  color: rgb(0, 126, 0);
 }
 
 .price {
