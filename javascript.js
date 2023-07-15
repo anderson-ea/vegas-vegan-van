@@ -76,6 +76,9 @@ fetch('menu.JSON')
   });
 
 const modal = document.querySelector('.menu-modal')
-modal.addEventListener("click", () => {
-  modal.classList.toggle('active');
+modal.addEventListener("click", (event) => {
+  const isOutside = !event.target.closest('.modal-container');
+  if (isOutside) {
+    modal.classList.toggle('active');
+  }
 })
