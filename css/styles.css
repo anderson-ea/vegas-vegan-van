@@ -193,11 +193,16 @@ nav > img {
 
 .food {
   max-width: 220px;
-  color: purple;
+  color: rgb(223, 113, 113);
   overflow: hidden;
   display: inline-block;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.food-modal {
+  color: rgb(223, 113, 113);
+  /* padding-bottom: 20px; */
 }
 
 .foods-border {
@@ -220,12 +225,8 @@ nav > img {
   padding: 20px;
 }
 
-.food-title {
-  color: green;
-}
-
-.food-name {
-  color: purple;
+.food-title, .food-name {
+  color: rgb(0, 126, 0);
 }
 
 .price {
@@ -257,6 +258,35 @@ footer {
   color: rgb(223, 113, 113);
   text-align: center;
   margin: 20px;
+}
+
+.menu-modal {
+  display: none;
+}
+
+.menu-modal.active {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  background-color: rgba(0,0,0,.6);
+}
+
+.modal-container {
+  position: absolute;
+  background-color:rgb(255, 255, 255);
+  padding: 20px;
+  width: 500px;
+  height: 500px; 
+}
+
+.modal {
+  height: 500px;
+  width: 500px;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
