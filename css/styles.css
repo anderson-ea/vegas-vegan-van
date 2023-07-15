@@ -200,6 +200,11 @@ nav > img {
   text-overflow: ellipsis;
 }
 
+.food-modal {
+  color: rgb(223, 113, 113);
+  /* padding-bottom: 20px; */
+}
+
 .foods-border {
   border: solid gray 1px;
   border-radius: 5px;
@@ -273,8 +278,15 @@ footer {
 .modal-container {
   position: absolute;
   background-color:rgb(255, 255, 255);
+  padding: 20px;
   width: 500px;
   height: 500px; 
+}
+
+.modal {
+  height: 500px;
+  width: 500px;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {

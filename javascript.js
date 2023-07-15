@@ -60,14 +60,13 @@ fetch('menu.JSON')
         const foodIng = parent.querySelector('.food').innerText
         const foodImg = parent.querySelector('img').getAttribute('src')
         innerModal.innerHTML = `
-          <div class="flex">
-            <div class="flex column">
-              <h4 class="">${foodName}</h4>
-              <p class="flex"></br>${foodIng}</p>
+            <div class="flex column modal">
+              <h4 class="food-name food-modal">${foodName}</h4>
+              <p class="flex food-modal"></br>${foodIng}</p>
               <p class="">${foodPrice}</p>
+              <img src="${foodImg}" alt="${foodName}" style="width: 300px; height: 300px">
+              <button class="">Add to Order</button>
             </div>
-            <img src="${foodImg}" alt="${foodName}" style="padding: 20px;width: 200px; height: 200px">
-          </div>
         `;
       }))
     
