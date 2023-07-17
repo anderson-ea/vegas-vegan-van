@@ -278,6 +278,7 @@ footer {
 .modal-container {
   position: absolute;
   background-color:rgb(255, 255, 255);
+  border-radius: 5px;
   padding: 20px;
   width: 500px;
   height: 500px; 

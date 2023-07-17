@@ -1,19 +1,32 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-const shoppingCartValue = document.querySelector("shop-cart");
+let cartFromLocalStorage = (localStorage.getItem('cart') || '[]')
+if (cartFromLocalStorage == '[]') {
+  localStorage.setItem('cart', 0)
+}
 
-
-//nav bar hamburger to X logic
+//click on nav bar hamburger event listener
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
 })
 
+//nav bar event to activate menu or hamburger
 document.querySelectorAll(".nav-link").forEach(n => n.
   addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
   }))
+
+//shopping cart value total displayed right side of nav bar logic to add total
+const shoppingCartValue = document.querySelector(".shop-cart");
+shoppingCartValue.innerHTML = `🛒 $${cartFromLocalStorage}`
+const addToTotal = (totalCart, addedAmount) => {
+  totalCart += addedAmount
+  localStorage.setItem('cart', totalCart)
+  shoppingCartValue.innerHTML = `🛒 $${totalCart}`
+  modal.classList.toggle('active');
+}
 
 //generates menu items with corresponding data
 fetch('menu.JSON')
@@ -53,19 +66,23 @@ fetch('menu.JSON')
     // const food 
     document.querySelectorAll(".foods-border").forEach(n => 
       n.addEventListener("click", (e) => {
+        let seeCart = localStorage.getItem('cart')
         modal.classList.toggle('active')
         const parent = document.getElementById(e.currentTarget.id)
         const foodName = parent.querySelector('.food-name').innerText
         const foodPrice = parent.querySelector('.price').innerText
         const foodIng = parent.querySelector('.food').innerText
         const foodImg = parent.querySelector('img').getAttribute('src')
+        const parsedPrice = parseFloat(foodPrice.replace(/\$|,/g, ''))
+        // console.log(foodPrice)
+        // console.log(parsedPrice)
         innerModal.innerHTML = `
             <div class="flex column modal">
               <h4 class="food-name food-modal">${foodName}</h4>
               <p class="flex food-modal"></br>${foodIng}</p>
               <p class="">${foodPrice}</p>
               <img src="${foodImg}" alt="${foodName}" style="width: 300px; height: 300px">
-              <button class="">Add to Order</button>
+              <button class="" onclick="addToTotal(${seeCart}, ${parsedPrice})">Add to Order</button>
             </div>
         `;
       }))
@@ -75,7 +92,8 @@ fetch('menu.JSON')
     console.error('Error:', error);
   });
 
-const modal = document.querySelector('.menu-modal')
+//click on outside of menu page modal to close
+const modal = document.querySelector('.menu-modal');
 modal.addEventListener("click", (event) => {
   const isOutside = !event.target.closest('.modal-container');
   if (isOutside) {
