@@ -1,6 +1,6 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-let cartFromLocalStorage = (localStorage.getItem('cart') || '[]')
+let cartFromLocalStorage = (localStorage.getItem('cart') || '0.00')
 if (cartFromLocalStorage == '[]') {
   localStorage.setItem('cart', 0)
 }
