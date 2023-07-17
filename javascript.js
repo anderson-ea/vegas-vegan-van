@@ -70,7 +70,7 @@ fetch('menu.JSON')
               <p class="flex food"></br>${item.ingredients}</p>
               <p class="price">$${item.price.toFixed(2)}</p>
             </div>
-            <img src="${item.img}" alt="${item.name}" style="padding: 20px;width: 100px; height: 100px">
+            <img src="/vegas-vegan-van/${item.img}" alt="${item.name}" style="padding: 20px;width: 100px; height: 100px">
           </div>
         `;
         container.appendChild(listItem);
@@ -108,7 +108,7 @@ fetch('menu.JSON')
               <h4 class="food-name food-modal">${foodName}</h4>
               <p class="flex food-modal"></br>${foodIng}</p>
               <p class="">${foodPrice}</p>
-              <img src="${foodImg}" alt="${foodName}" style="width: 300px; height: 300px">
+              <img src="/vegas-vegan-van/${foodImg}" alt="${foodName}" style="width: 300px; height: 300px">
               <button class="orderButton" onclick="addToTotal(${cartTotal}, ${parsedPrice});pushBurgerToLocal(\'${foodName}\')">Add to Order</button>
             </div>
         `;
