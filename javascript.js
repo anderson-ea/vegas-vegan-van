@@ -5,6 +5,16 @@ if (cartFromLocalStorage == '[]') {
   localStorage.setItem('cart', 0)
 }
 
+const getBurgerList = () => {
+  let listOfItems = localStorage.getItem('cartList')
+  if (listOfItems) {
+    return JSON.parse(listOfItems)
+  } else {
+    return []
+  }
+}
+
+
 //click on nav bar hamburger event listener
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
@@ -25,7 +35,24 @@ const addToTotal = (totalCart, addedAmount) => {
   totalCart += addedAmount
   localStorage.setItem('cart', totalCart.toFixed(2))
   shoppingCartValue.innerHTML = `🛒 $${totalCart.toFixed(2)}`
+  
   modal.classList.toggle('active');
+}
+
+const addToList = (foodName) => {
+  let theList = getBurgerList();
+  theList.push(foodName);
+  return theList;
+}
+
+const saveBurgerList = (burgers) => {
+  const burgersJSON = JSON.stringify(burgers);
+  localStorage.setItem('cartList', burgersJSON)
+}
+
+const pushBurgerToLocal = (foodName) => {
+  const updatedBurgerList = addToList(foodName);
+  saveBurgerList(updatedBurgerList)
 }
 
 //generates menu items with corresponding data
@@ -66,7 +93,7 @@ fetch('menu.JSON')
     // const food 
     document.querySelectorAll(".foods-border").forEach(n => 
       n.addEventListener("click", (e) => {
-        let seeCart = localStorage.getItem('cart')
+        let cartTotal = localStorage.getItem('cart')
         modal.classList.toggle('active')
         const parent = document.getElementById(e.currentTarget.id)
         const foodName = parent.querySelector('.food-name').innerText
@@ -82,7 +109,7 @@ fetch('menu.JSON')
               <p class="flex food-modal"></br>${foodIng}</p>
               <p class="">${foodPrice}</p>
               <img src="${foodImg}" alt="${foodName}" style="width: 300px; height: 300px">
-              <button class="" onclick="addToTotal(${seeCart}, ${parsedPrice})">Add to Order</button>
+              <button class="" onclick="addToTotal(${cartTotal}, ${parsedPrice});pushBurgerToLocal(\'${foodName}\')">Add to Order</button>
             </div>
         `;
       }))
