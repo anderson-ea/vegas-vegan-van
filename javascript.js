@@ -23,8 +23,8 @@ const shoppingCartValue = document.querySelector(".shop-cart");
 shoppingCartValue.innerHTML = `🛒 $${cartFromLocalStorage}`
 const addToTotal = (totalCart, addedAmount) => {
   totalCart += addedAmount
-  localStorage.setItem('cart', totalCart)
-  shoppingCartValue.innerHTML = `🛒 $${totalCart}`
+  localStorage.setItem('cart', totalCart.toFixed(2))
+  shoppingCartValue.innerHTML = `🛒 $${totalCart.toFixed(2)}`
   modal.classList.toggle('active');
 }
 
