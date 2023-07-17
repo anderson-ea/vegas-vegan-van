@@ -109,7 +109,7 @@ fetch('menu.JSON')
               <p class="flex food-modal"></br>${foodIng}</p>
               <p class="">${foodPrice}</p>
               <img src="${foodImg}" alt="${foodName}" style="width: 300px; height: 300px">
-              <button class="" onclick="addToTotal(${cartTotal}, ${parsedPrice});pushBurgerToLocal(\'${foodName}\')">Add to Order</button>
+              <button class="orderButton" onclick="addToTotal(${cartTotal}, ${parsedPrice});pushBurgerToLocal(\'${foodName}\')">Add to Order</button>
             </div>
         `;
       }))
