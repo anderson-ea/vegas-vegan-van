@@ -1,4 +1,6 @@
 # vegas-vegan-van
-Las Vegas Vegan Van website with shopping cart. Created using html, css, and javascript.
+Las Vegas Vegan Van - restaurant website to order food. Created using html, css, and javascript.
 
-* Getting back into coding - committing this sentence just brushing up and working on new env on Linux!!
+Mobile responsive
+
+## Visit here : [https://anderson-ea.github.io/vegas-vegan-van](https://anderson-ea.github.io/vegas-vegan-van)
